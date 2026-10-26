@@ -478,8 +478,9 @@ p { margin: 0; }
   display: grid; place-items: center; width: 56px; height: 56px;
   border: var(--line) solid var(--bone); transition: color .15s, background-color .15s, border-color .15s;
 }
-.socials .icon { width: 28px; height: 28px; }
+.socials .icon { width: 28px; height: 28px; stroke: var(--bone); }
 .footer .socials a:hover { color: var(--asphalt); background: var(--lime); border-color: var(--lime); }
+.footer .socials a:hover .icon { stroke: var(--asphalt); }
 .footer__note { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(244, 244, 244, .14); font: 500 .75rem var(--font-mono); letter-spacing: .06em; }
 @media (max-width: 760px) {
   .footer__inner { grid-template-columns: 1fr 1fr; }
