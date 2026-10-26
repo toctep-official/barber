@@ -38,3 +38,4 @@ img/            фото барбершопа и логотип сети «Му�
 - Цены взяты с Яндекс Карт (там отмечено, что они давно не обновлялись).
 
 Шрифты: Dela Gothic One, Onest, JetBrains Mono (Google Fonts).
+Значки WhatsApp, Телеграма и ВКонтакте: [Tabler Icons](https://tabler.io/icons) (MIT), найдены через [21st.dev](https://21st.dev/community/icons).

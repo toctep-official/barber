@@ -47,6 +47,8 @@ p { margin: 0; }
 
 .skip-link { position: absolute; left: 16px; top: -100px; z-index: 100; padding: .6rem 1rem; background: var(--lime); color: var(--asphalt); }
 .skip-link:focus { top: 12px; }
+/* Значки мессенджеров (линейные, цвет берут от текста) */
+.icon { width: 1.35em; height: 1.35em; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
@@ -471,6 +473,13 @@ p { margin: 0; }
 .footer__col { display: flex; flex-direction: column; gap: .6rem; }
 .footer a { color: var(--bone); text-decoration: none; }
 .footer a:hover { color: var(--lime); }
+.socials { display: flex; gap: 12px; align-items: flex-start; }
+.footer .socials a {
+  display: grid; place-items: center; width: 56px; height: 56px;
+  border: var(--line) solid var(--bone); transition: color .15s, background-color .15s, border-color .15s;
+}
+.socials .icon { width: 28px; height: 28px; }
+.footer .socials a:hover { color: var(--asphalt); background: var(--lime); border-color: var(--lime); }
 .footer__note { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(244, 244, 244, .14); font: 500 .75rem var(--font-mono); letter-spacing: .06em; }
 @media (max-width: 760px) {
   .footer__inner { grid-template-columns: 1fr 1fr; }
