@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Big Ali's — барбершоп в Царицыно</title>
+  <meta name="description" content="Барбершоп Big Ali's на 6-й Радиальной, 3к9. Мужские и детские стрижки, борода, «Отец + сын». С 2018 года, 5,0 на Яндекс Картах. Запись в WhatsApp и Телеграм.">
+  <meta property="og:title" content="Big Ali's — барбершоп в Царицыно">
+  <meta property="og:description" content="Стрижка без виски. Просто лучшая в Царицыно. С 2018 года.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0E0E0E">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23E8241A'/><text x='16' y='23' font-family='Arial Black,sans-serif' font-size='18' font-weight='900' text-anchor='middle' fill='%230E0E0E'>BA</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=JetBrains+Mono:wght@500;700&family=Onest:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="#top" class="logo" aria-label="Big Ali's, на главную"><span class="logo__mark">BA</span>Big&nbsp;Ali's</a>
+
+    <nav class="nav" id="nav" aria-label="Разделы сайта">
+      <a href="#prices">Прайс</a>
+      <a href="#father-son">Отец&nbsp;+&nbsp;сын</a>
+      <a href="#works">Работы</a>
+      <a href="#barber">Барбер</a>
+      <a href="#find">Как найти</a>
+      <a href="#booking" class="btn nav__cta">Записаться</a>
+    </nav>
+
+    <a href="tel:+79661041166" class="header__phone">+7 966 104-11-66</a>
+    <a href="#booking" class="btn btn--small header__cta">Записаться</a>
+
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Первый экран: огромный заголовок поверх ч/б фото, наклейка с рейтингом -->
+  <section class="hero" id="top">
+    <img class="hero__photo" src="img/hero.jpg" alt="Барбер в кепке стрижёт клиента машинкой" width="1000" height="1500" fetchpriority="high">
+    <div class="container hero__inner">
+      <p class="hero__kicker">Барбершоп · Царицыно · с&nbsp;2018</p>
+      <h1 class="hero__title">Стрижка без&nbsp;виски.<span>Просто лучшая в&nbsp;Царицыно.</span></h1>
+
+      <div class="hero__bottom">
+        <div class="hero__actions">
+          <a class="btn btn--big" href="https://wa.me/79661041166?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%81%D1%82%D1%80%D0%B8%D0%B6%D0%BA%D1%83" target="_blank" rel="noopener">Записаться в&nbsp;WhatsApp</a>
+          <a class="btn btn--line btn--big" href="tel:+79661041166">Позвонить</a>
+        </div>
+        <dl class="hero__facts">
+          <div><dt>Стрижка</dt><dd>от&nbsp;2&nbsp;000&nbsp;₽</dd></div>
+          <div><dt>Адрес</dt><dd>6-я Радиальная, 3к9</dd></div>
+          <div><dt>Работаем</dt><dd>каждый день, по&nbsp;записи</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <a class="sticker hero__sticker" href="https://yandex.ru/maps/org/95902597766/reviews/" target="_blank" rel="noopener" aria-label="Рейтинг 5,0 на Яндекс Картах, 319 оценок — читать отзывы">
+      <b>5,0&nbsp;★</b>
+      <span>319 оценок<br>Яндекс Карты</span>
+    </a>
+  </section>
+
+  <!-- Бегущая лента: честные условия -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Только по&nbsp;записи</span><span>Оплата наличными</span><span>С&nbsp;собакой можно</span><span>Вход через арку</span><span>Est.&nbsp;2018</span><span>Хорошее место 2026</span>
+      <span>Только по&nbsp;записи</span><span>Оплата наличными</span><span>С&nbsp;собакой можно</span><span>Вход через арку</span><span>Est.&nbsp;2018</span><span>Хорошее место 2026</span>
+    </div>
+  </div>
+
+  <!-- Прайс: цены в будни и выходные разные — переключатель меняет их на месте (js/main.js) -->
+  <section class="section section--bone" id="prices" aria-labelledby="prices-title">
+    <div class="container">
+      <div class="prices__head">
+        <h2 id="prices-title" class="mega">Прайс</h2>
+        <div class="days" role="radiogroup" aria-label="Когда придёте">
+          <button type="button" class="days__btn" role="radio" aria-checked="true" data-day="weekday">Будни</button>
+          <button type="button" class="days__btn" role="radio" aria-checked="false" data-day="weekend">Выходные</button>
+        </div>
+      </div>
+
+      <ul class="price">
+        <li class="price__row">
+          <div class="price__name"><h3>Мужская стрижка</h3><p>Ножницы и&nbsp;машинка, мытьё, укладка</p></div>
+          <p class="price__sum"><span data-weekday="2 000" data-weekend="2 200">2 000</span>&nbsp;₽</p>
+        </li>
+        <li class="price__row">
+          <div class="price__name"><h3>Стрижка + борода</h3><p>Стрижка и&nbsp;моделирование бороды</p></div>
+          <p class="price__sum"><span data-weekday="3 500" data-weekend="3 700">3 500</span>&nbsp;₽</p>
+        </li>
+        <li class="price__row">
+          <div class="price__name"><h3>Стрижка ножницами</h3><p>Только ножницы, около часа</p></div>
+          <p class="price__sum"><span>2 700</span>&nbsp;₽</p>
+        </li>
+        <li class="price__row">
+          <div class="price__name"><h3>Ножницы + борода</h3><p>Стрижка ножницами и&nbsp;моделирование бороды</p></div>
+          <p class="price__sum"><span>3 800</span>&nbsp;₽</p>
+        </li>
+        <li class="price__row price__row--hot">
+          <div class="price__name"><h3>Отец + сын</h3><p>Две стрижки, ребёнок до&nbsp;12&nbsp;лет. Без бороды</p></div>
+          <p class="price__sum"><span>3 400</span>&nbsp;₽</p>
+        </li>
+        <li class="price__row">
+          <div class="price__name"><h3>Детская стрижка</h3><p>До&nbsp;12&nbsp;лет: подбор формы, стрижка, мытьё, укладка</p></div>
+          <p class="price__sum"><span>2 000</span>&nbsp;₽</p>
+        </li>
+        <li class="price__row">
+          <div class="price__name"><h3>Камуфляж бороды</h3><p>Тонирование седины</p></div>
+          <p class="price__sum"><span>1 500</span>&nbsp;₽</p>
+        </li>
+        <li class="price__row">
+          <div class="price__name"><h3>Горячий воск</h3><p>Нос, уши, брови. Около 30&nbsp;минут. Две зоны&nbsp;— 500&nbsp;₽</p></div>
+          <p class="price__sum"><span>300</span>&nbsp;₽</p>
+        </li>
+      </ul>
+
+      <p class="prices__note"><span class="tag">Наличные</span> Карты не&nbsp;принимаем. Цены как на&nbsp;Яндекс Картах, точную стоимость подтвердим при записи.</p>
+    </div>
+  </section>
+
+  <div class="pole" aria-hidden="true"></div>
+
+  <!-- Отец + сын: редкая услуга, отдельным красным блоком -->
+  <section class="father" id="father-son" aria-labelledby="father-title">
+    <div class="container father__inner">
+      <div class="father__text">
+        <p class="kicker">Вдвоём за&nbsp;один визит</p>
+        <h2 id="father-title" class="mega">Отец + сын</h2>
+        <p class="father__lead">Две стрижки подряд: сначала сын, потом вы. Ножницы и&nbsp;машинка, мытьё и&nbsp;укладка обоим. Ребёнок до&nbsp;12&nbsp;лет.</p>
+        <p class="father__price">3&nbsp;400&nbsp;₽ <span>за&nbsp;двоих</span></p>
+        <a class="btn btn--dark btn--big" href="https://wa.me/79661041166?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%C2%AB%D0%9E%D1%82%D0%B5%D1%86%20%2B%20%D1%81%D1%8B%D0%BD%C2%BB" target="_blank" rel="noopener">Записать нас с&nbsp;сыном</a>
+      </div>
+      <img class="father__photo" src="img/kid.jpg" alt="Мальчик в накидке сидит в кресле барбера" loading="lazy" width="1000" height="1500">
+    </div>
+  </section>
+
+  <!-- Цифры -->
+  <section class="stats" aria-label="Барбершоп в цифрах">
+    <dl class="container stats__list">
+      <div><dt>2018</dt><dd>год, когда открылись</dd></div>
+      <div><dt>5,0</dt><dd>рейтинг на&nbsp;Яндекс Картах</dd></div>
+      <div><dt>319</dt><dd>оценок от&nbsp;клиентов</dd></div>
+      <div><dt>7+&nbsp;лет</dt><dd>ходят постоянные клиенты</dd></div>
+    </dl>
+  </section>
+
+  <!-- Работы: фото-заглушки с Unsplash, заменить на работы мастера (те же имена файлов) -->
+  <section class="section" id="works" aria-labelledby="works-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="works-title" class="mega">Работы</h2>
+        <p>Фейды, классика, бороды. Больше&nbsp;— в&nbsp;<a href="https://t.me/alibigthabarber" target="_blank" rel="noopener">Телеграме</a> и&nbsp;<a href="https://vk.com/alibigthabarber" target="_blank" rel="noopener">ВКонтакте</a>.</p>
+      </div>
+      <ul class="works scroller">
+        <li class="work work--big"><img src="img/work-1.jpg" alt="Короткий фейд, барбер ровняет контур машинкой" loading="lazy" width="900" height="1125"><span>01 / Фейд</span></li>
+        <li class="work"><img src="img/work-2.jpg" alt="Барбер делает переход машинкой на затылке" loading="lazy" width="900" height="1350"><span>02 / Переход</span></li>
+        <li class="work"><img src="img/work-3.jpg" alt="Мужчина с густой оформленной бородой в профиль" loading="lazy" width="900" height="1350"><span>03 / Борода</span></li>
+        <li class="work"><img src="img/work-4.jpg" alt="Барбер стрижёт кудрявые волосы клиента" loading="lazy" width="900" height="1197"><span>04 / Кудри</span></li>
+        <li class="work"><img src="img/work-5.jpg" alt="Барбер стрижёт виски машинкой" loading="lazy" width="900" height="600"><span>05 / Виски</span></li>
+        <li class="work"><img src="img/work-6.jpg" alt="Мужчина с зачёсанной назад стрижкой и короткой бородой" loading="lazy" width="900" height="1348"><span>06 / Классика</span></li>
+      </ul>
+      <p class="swipe-hint" aria-hidden="true">Листай →</p>
+    </div>
+  </section>
+
+  <!-- Фото на всю ширину: ломает ритм между блоками -->
+  <figure class="band" aria-hidden="true">
+    <img src="img/band.jpg" alt="" loading="lazy" width="1800" height="1200">
+    <figcaption>Не&nbsp;салон. Не&nbsp;сеть. Барбершоп.</figcaption>
+  </figure>
+
+  <!-- Барбер -->
+  <section class="section section--bone" id="barber" aria-labelledby="barber-title">
+    <div class="container barber">
+      <div class="barber__frame"><img class="barber__photo" src="img/ali.jpg" alt="Портрет барбера в кепке" loading="lazy" width="1000" height="1500"></div>
+      <div class="barber__text">
+        <p class="kicker">Барбер и&nbsp;хозяин</p>
+        <h2 id="barber-title" class="mega">Али</h2>
+        <p class="barber__lead">Открыл барбершоп в&nbsp;2018 году. Сюда идут не&nbsp;«в&nbsp;салон», а&nbsp;к&nbsp;мастеру: многие клиенты ходят больше семи лет и&nbsp;приводят сыновей.</p>
+        <ul class="barber__list">
+          <li>Стрижки ножницами и&nbsp;машинкой, фейды, классика</li>
+          <li>Моделирование и&nbsp;камуфляж бороды</li>
+          <li>Детские стрижки и&nbsp;«Отец + сын»</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Отзывы: реальная разбивка оценок с Яндекс Карт вместо придуманных цитат -->
+  <section class="section section--dark" id="reviews" aria-labelledby="reviews-title">
+    <div class="container reviews">
+      <div class="reviews__score">
+        <h2 id="reviews-title" class="visually-hidden">Отзывы</h2>
+        <p class="reviews__big">5,0</p>
+        <p class="reviews__meta">319 оценок · 200 отзывов<br>Яндекс Карты</p>
+        <p class="sticker sticker--static">Хорошее место 2026</p>
+      </div>
+      <div class="reviews__bars">
+        <p class="kicker">Что отмечают в&nbsp;отзывах</p>
+        <ul class="bars">
+          <li><span>Персонал</span><b style="--v: 100%">100%</b></li>
+          <li><span>Барберы</span><b style="--v: 100%">100%</b></li>
+          <li><span>Атмосфера</span><b style="--v: 100%">100%</b></li>
+          <li><span>Профессионализм</span><b style="--v: 100%">100%</b></li>
+          <li><span>Стрижка</span><b style="--v: 99%">99%</b></li>
+          <li><span>Время ожидания</span><b style="--v: 95%">95%</b></li>
+        </ul>
+        <a class="btn btn--line" href="https://yandex.ru/maps/org/95902597766/reviews/" target="_blank" rel="noopener">Читать все 200 отзывов</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Как найти: вход неочевидный, поэтому три шага -->
+  <section class="section" id="find" aria-labelledby="find-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="find-title" class="mega">Как найти</h2>
+        <p>6-я Радиальная, 3к9. Метро Царицыно или Кантемировская, рядом остановка «ЖК&nbsp;Царицыно».</p>
+      </div>
+
+      <ol class="route">
+        <li class="route__step route__step--photo">
+          <img src="img/arch.jpg" alt="Тёмная арка, за ней двор" loading="lazy" width="1000" height="666">
+          <div><h3>Найдите арку</h3><p>У&nbsp;дома 3к9 по&nbsp;6-й Радиальной.</p></div>
+        </li>
+        <li class="route__step"><h3>Пройдите во&nbsp;двор</h3><p>Вход в&nbsp;барбершоп&nbsp;— со&nbsp;двора, не&nbsp;с&nbsp;улицы.</p></li>
+        <li class="route__step"><h3>Вы на&nbsp;месте</h3><p>Если заблудились, позвоните: <a href="tel:+79661041166">+7 966 104-11-66</a></p></li>
+      </ol>
+
+      <div class="find">
+        <ul class="find__facts">
+          <li><b>Оплата</b> только наличными</li>
+          <li><b>Парковка</b> рядом, есть места для людей с&nbsp;инвалидностью</li>
+          <li><b>Пандус</b> вход без ступенек</li>
+          <li><b>Животные</b> с&nbsp;собакой можно</li>
+          <li><b>Wi-Fi</b> есть</li>
+        </ul>
+        <div class="find__map">
+          <iframe src="https://yandex.ru/map-widget/v1/?ll=37.664417%2C55.604723&z=16&pt=37.664417,55.604723,pm2rdm" title="Big Ali's на карте" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Запись: собирает сообщение в WhatsApp или Телеграм из выбранных кнопок (js/main.js) -->
+  <section class="section section--red" id="booking" aria-labelledby="booking-title">
+    <div class="container booking">
+      <h2 id="booking-title" class="mega">Записаться</h2>
+
+      <form class="picker" id="picker">
+        <fieldset>
+          <legend>Что делаем</legend>
+          <div class="chips">
+            <label><input type="radio" name="service" value="мужская стрижка" checked><span>Стрижка</span></label>
+            <label><input type="radio" name="service" value="стрижка + борода"><span>Стрижка + борода</span></label>
+            <label><input type="radio" name="service" value="стрижка ножницами"><span>Ножницами</span></label>
+            <label><input type="radio" name="service" value="Отец + сын"><span>Отец + сын</span></label>
+            <label><input type="radio" name="service" value="детская стрижка"><span>Детская</span></label>
+            <label><input type="radio" name="service" value="камуфляж бороды"><span>Камуфляж</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Когда удобно</legend>
+          <div class="chips">
+            <label><input type="radio" name="when" value="сегодня" checked><span>Сегодня</span></label>
+            <label><input type="radio" name="when" value="завтра"><span>Завтра</span></label>
+            <label><input type="radio" name="when" value="на выходных"><span>На&nbsp;выходных</span></label>
+            <label><input type="radio" name="when" value="в ближайшие дни, подскажите свободное время"><span>Подскажите время</span></label>
+          </div>
+        </fieldset>
+
+        <p class="picker__preview" id="picker-preview" aria-live="polite"></p>
+
+        <div class="picker__send">
+          <a class="btn btn--dark btn--big" id="send-wa" href="https://wa.me/79661041166" target="_blank" rel="noopener">Отправить в&nbsp;WhatsApp</a>
+          <a class="btn btn--line-dark btn--big" id="send-tg" href="https://t.me/alibigthabarber" target="_blank" rel="noopener">Телеграм</a>
+        </div>
+      </form>
+
+      <div class="booking__alt">
+        <p>Или&nbsp;позвоните</p>
+        <a class="booking__phone" href="tel:+79661041166">+7&nbsp;966 104-11-66</a>
+        <a class="booking__link" href="https://yandex.ru/maps/org/95902597766/" target="_blank" rel="noopener">Онлайн-запись на&nbsp;Яндекс Картах →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <p class="footer__logo">Big&nbsp;Ali's</p>
+      <p>Барбершоп в&nbsp;Царицыно. Est.&nbsp;2018.</p>
+    </div>
+    <div class="footer__col">
+      <span>6-я Радиальная, 3к9, вход со&nbsp;двора</span>
+      <a href="tel:+79661041166">+7 966 104-11-66</a>
+    </div>
+    <div class="footer__col">
+      <a href="https://wa.me/79661041166" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://t.me/alibigthabarber" target="_blank" rel="noopener">Телеграм</a>
+      <a href="https://vk.com/alibigthabarber" target="_blank" rel="noopener">ВКонтакте</a>
+    </div>
+  </div>
+  <p class="container footer__note">Неофициальный концепт сайта. Данные&nbsp;— с&nbsp;Яндекс Карт, фото&nbsp;— Unsplash.</p>
+</footer>
+
+<!-- На телефоне запись всегда под пальцем -->
+<div class="dock" id="dock">
+  <a class="btn btn--big" href="#booking">Записаться</a>
+  <a class="dock__call" href="tel:+79661041166" aria-label="Позвонить">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>
+  </a>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
