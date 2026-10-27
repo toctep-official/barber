@@ -17,11 +17,16 @@
   nav.addEventListener('click', (e) => { if (e.target.closest('a')) setNav(false); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setNav(false); });
 
-  // ---------- Кнопки внизу экрана прячутся, когда блок записи уже на экране ----------
+  // ---------- Кнопки внизу экрана прячутся на первом экране и у блока записи: там свои кнопки ----------
   const dock = document.getElementById('dock');
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(([entry]) => dock.classList.toggle('is-hidden', entry.isIntersecting))
-      .observe(document.getElementById('booking'));
+    const visible = new Set();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
+      dock.classList.toggle('is-hidden', visible.size > 0);
+    });
+    io.observe(document.querySelector('.hero__actions'));
+    io.observe(document.getElementById('booking'));
   }
 
   // ---------- Прайс: будни / выходные ----------

@@ -317,7 +317,8 @@ p { margin: 0; }
 .stats__list { display: grid; grid-template-columns: repeat(4, 1fr); margin: 0 auto; }
 .stats__list > div { padding: clamp(2rem, 4vw, 3.5rem) 1.5rem; }
 .stats__list > div + div { border-left: 1px solid rgba(244, 244, 244, .14); }
-.stats__list dt { font: clamp(2.4rem, 1.5rem + 3vw, 4.5rem)/1 var(--font-display); }
+.stats__list > div:first-child { padding-left: 0; }
+.stats__list dt { font: clamp(2.4rem, 1.5rem + 3vw, 4.5rem)/1 var(--font-display); white-space: nowrap; }
 .stats__list > div:nth-child(2) dt { color: var(--lime); }
 .stats__list dd { margin: .75rem 0 0; font: 500 .875rem/1.4 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--soft-dark); }
 @media (max-width: 860px) {
@@ -325,6 +326,7 @@ p { margin: 0; }
   .stats__list > div:nth-child(3) { border-left: 0; }
   .stats__list > div:nth-child(n+3) { border-top: 1px solid rgba(244, 244, 244, .14); }
   .stats__list > div { padding-inline: 1rem; }
+  .stats__list > div:nth-child(odd) { padding-left: 0; }
 }
 
 /* ---------- Работы ---------- */
@@ -345,6 +347,8 @@ p { margin: 0; }
 }
 .work:hover img { filter: var(--photo-hover); transform: scale(1.04); }
 .work:hover span { background: var(--lime); }
+/* Неон в ч/б теряет смысл — единственный цветной кадр серии */
+.work--color img, .work--color:hover img { filter: none; }
 
 
 /* ---------- Барбер ---------- */
@@ -354,7 +358,7 @@ p { margin: 0; }
 .barber__photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; filter: var(--photo); transition: filter .3s, transform .5s; }
 .barber .mega { font-size: clamp(5rem, 2rem + 12vw, 14rem); line-height: .8; }
 .barber__lead { margin-top: 1.75rem; max-width: 40ch; font-size: 1.25rem; line-height: 1.5; }
-.barber__nick { margin-top: .5rem; font: clamp(1.4rem, 1rem + 1.5vw, 2.2rem)/1 var(--font-display); text-transform: uppercase; color: var(--soft-light); }
+.barber__nick { margin-top: 1.25rem; font: clamp(1.4rem, 1rem + 1.5vw, 2.2rem)/1 var(--font-display); text-transform: uppercase; color: var(--soft-light); }
 /* Досье бойца: строки, как в сравнении соперников перед боем */
 .tape { margin: 2rem 0 0; max-width: 34rem; }
 .tape > div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; padding: .8rem 0; border-top: var(--line) solid var(--asphalt); }
@@ -369,21 +373,18 @@ p { margin: 0; }
 }
 
 /* ---------- Отзывы: разбивка оценок ---------- */
-.reviews { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
-.reviews__big { font: clamp(7rem, 4rem + 12vw, 17rem)/1 var(--font-display); color: var(--lime); letter-spacing: -.04em; }
-.reviews__meta { margin-top: .5rem; font: 700 .9375rem/1.5 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--soft-dark); }
-.bars { list-style: none; margin: 0 0 2rem; padding: 0; }
-.bars li { display: grid; grid-template-columns: minmax(8rem, 13rem) 1fr; align-items: center; gap: 1rem; padding: .55rem 0; }
-.bars span { font: 700 .875rem var(--font-mono); text-transform: uppercase; letter-spacing: .06em; }
-/* Полоса: красная заливка на ширину процента, число справа */
-.bars b {
-  display: block; padding: .5rem .75rem;
-  font: 1.1rem/1 var(--font-display); color: var(--asphalt);
-  background: linear-gradient(var(--lime), var(--lime)) 0 0 / var(--v) 100% no-repeat, rgba(244, 244, 244, .12);
-}
+.reviews { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+/* Хвост запятой уходит ниже строки — запас снизу, чтобы он не залезал на подпись */
+.reviews__big { padding-bottom: .12em; font: clamp(7rem, 4rem + 12vw, 17rem)/1 var(--font-display); color: var(--lime); letter-spacing: -.04em; }
+.reviews__meta { margin-top: .25em; font: 700 .9375rem/1.5 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--soft-dark); }
+/* Проценты почти все по 100, полосы выходили сплошной заливкой — поэтому плитки с числом */
+.bars { list-style: none; margin: 0 0 2rem; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem 1.5rem; }
+.bars li { display: flex; flex-direction: column-reverse; gap: .4rem; padding-top: .9rem; border-top: var(--line) solid var(--bone); }
+.bars span { font: 700 .8125rem var(--font-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--soft-dark); }
+.bars b { font: clamp(1.8rem, 1.3rem + 1.4vw, 2.6rem)/1 var(--font-display); font-weight: 400; color: var(--lime); }
 @media (max-width: 860px) {
   .reviews { grid-template-columns: 1fr; }
-  .bars li { grid-template-columns: 1fr; gap: .35rem; }
+  .bars { grid-template-columns: 1fr 1fr; gap: 1.25rem 1rem; }
 }
 
 /* ---------- Как найти ---------- */
@@ -402,10 +403,11 @@ p { margin: 0; }
 .route__step h3 { font: 1.4rem/1.1 var(--font-display); text-transform: uppercase; }
 .route__step p { margin-top: .5rem; color: var(--soft-light); }
 .route__step a { color: var(--asphalt); font-weight: 700; white-space: nowrap; }
-.route__step--photo { overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; align-items: end; padding: 0; color: var(--bone); background: var(--asphalt); }
-.route__step--photo::before { color: var(--asphalt); background: var(--lime); position: absolute; top: 1.25rem; right: 1.25rem; margin: 0; }
+.route__step--photo { overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; padding: 0; color: var(--bone); background: var(--asphalt); }
+/* Номер стоит над текстом во второй колонке, как у остальных шагов */
+.route__step--photo::before { color: var(--asphalt); background: var(--lime); position: absolute; z-index: 1; top: 1.5rem; left: calc(50% + .625rem); margin: 0; }
 .route__step--photo img { width: 100%; height: 100%; min-height: 220px; object-fit: cover; object-position: 50% 45%; filter: var(--photo); transition: filter .3s, transform .5s; }
-.route__step--photo > div { padding: 1.5rem 1.5rem 1.5rem 0; }
+.route__step--photo > div { padding: calc(1.5rem + 3.4rem + 1rem) 1.5rem 1.5rem 0; }
 .barber__frame:hover .barber__photo, .route__step--photo:hover img { filter: var(--photo-hover); transform: scale(1.04); }
 .route__step--photo p { color: var(--soft-dark); }
 
@@ -415,7 +417,7 @@ p { margin: 0; }
 .find__facts li:last-child { border-bottom: var(--line) solid var(--asphalt); }
 .find__facts b { font: 700 .8125rem/1.9 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; }
 .find__facts li:first-child { background: var(--lime); }
-.find__map iframe { display: block; width: 100%; height: 100%; min-height: 360px; border: var(--line) solid var(--asphalt); filter: grayscale(.9) contrast(1.05); }
+.find__map iframe { display: block; width: 100%; height: 100%; min-height: 360px; border: var(--line) solid var(--asphalt); filter: grayscale(.45); }
 @media (max-width: 960px) {
   .route { grid-template-columns: 1fr 1fr; }
   .route__step--photo { grid-column: 1 / -1; }
@@ -426,6 +428,7 @@ p { margin: 0; }
   .route__step--photo { grid-template-columns: 1fr; }
   .route__step--photo img { min-height: 0; aspect-ratio: 16 / 9; }
   .route__step--photo > div { padding: 0 1.5rem 1.5rem; }
+  .route__step--photo::before { top: 1rem; left: 1rem; }
   .find__map iframe { min-height: 300px; }
 }
 
@@ -468,7 +471,8 @@ p { margin: 0; }
 /* ---------- Подвал ---------- */
 .footer { padding: clamp(3rem, 6vw, 5rem) 0 2rem; color: var(--soft-dark); font-size: .9375rem; }
 .footer__inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
-.footer__mark { width: 120px; margin-bottom: 1rem; }
+/* В картинке логотипа поля ~22% слева — сдвигаем, чтобы знак стоял по краю текста */
+.footer__mark { width: 120px; margin: -.5rem 0 .5rem -26px; }
 .footer__logo { margin-bottom: .5rem; font: clamp(2.5rem, 1.5rem + 4vw, 5rem)/.9 var(--font-display); text-transform: uppercase; color: var(--bone); }
 .footer__col { display: flex; flex-direction: column; gap: .6rem; }
 .footer a { color: var(--bone); text-decoration: none; }
@@ -481,7 +485,9 @@ p { margin: 0; }
 .socials .icon { width: 28px; height: 28px; stroke: var(--bone); }
 .footer .socials a:hover { color: var(--asphalt); background: var(--lime); border-color: var(--lime); }
 .footer .socials a:hover .icon { stroke: var(--asphalt); }
-.footer__note { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(244, 244, 244, .14); font: 500 .75rem var(--font-mono); letter-spacing: .06em; }
+.footer__note { margin-top: 3rem; font: 500 .75rem var(--font-mono); letter-spacing: .06em; }
+/* Линия внутри отступов контейнера, а не во всю его ширину */
+.footer__note::before { content: ""; display: block; margin-bottom: 1.5rem; border-top: 1px solid rgba(244, 244, 244, .14); }
 @media (max-width: 760px) {
   .footer__inner { grid-template-columns: 1fr 1fr; }
   .footer__inner > div:first-child { grid-column: 1 / -1; }
